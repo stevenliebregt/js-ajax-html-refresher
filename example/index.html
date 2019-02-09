@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Example</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        .info {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .example-block {
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        .limit-height > .ajax-refresh-wrapper {
+            max-height: 200px;
+            overflow: auto;
+        }
+
+        img {
+            height: 140px;
+        }
+    </style>
+</head>
+<body>
+<h1>This is an example</h1>
+
+<fieldset class="example-block">
+    <legend><h2>Replace example (5000ms)</h2></legend>
+    <p class="info">Replaces the content with the newly fetched data.</p>
+    <div class="ajax-refresh-wrapper">
+        <div class="ajax-refresh"
+             data-ar-action="replace"
+             data-ar-url="data.html"
+             data-ar-interval="5000">
+            <img src="loading.gif">
+        </div>
+    </div>
+</fieldset>
+
+<fieldset class="example-block limit-height">
+    <legend><h2>Append example</h2></legend>
+    <p class="info">Appends the fetched content to the element with the <code>ajax-refresh</code> class.</p>
+    <div class="ajax-refresh-wrapper">
+        <div class="ajax-refresh"
+             data-ar-action="append"
+             data-ar-url="data.html">
+            <img src="loading.gif">
+        </div>
+    </div>
+</fieldset>
+
+<fieldset class="example-block limit-height">
+    <legend><h2>Prepend example</h2></legend>
+    <p class="info">Prepends the fetched content to the element with the <code>ajax-refresh</code> class.</p>
+    <div class="ajax-refresh-wrapper">
+        <div class="ajax-refresh"
+             data-ar-action="prepend"
+             data-ar-url="data.html">
+            <img src="loading.gif">
+        </div>
+    </div>
+</fieldset>
+
+<fieldset class="example-block limit-height">
+    <legend><h2>Replace-Append example</h2></legend>
+    <p class="info">Replaces the content on the first pass, then appends the fetched content to the element with the <code>ajax-refresh</code> class on subsequent passes.</p>
+    <div class="ajax-refresh-wrapper">
+        <div class="ajax-refresh"
+             data-ar-action="replace-append"
+             data-ar-url="data.html">
+            <img src="loading.gif">
+        </div>
+    </div>
+</fieldset>
+
+
+<fieldset class="example-block limit-height">
+    <legend><h2>Replace-Prepend example</h2></legend>
+    <p class="info">Replaces the content on the first pass, then prepends the fetched content to the element with the <code>ajax-refresh</code> class on subsequent passes.</p>
+    <div class="ajax-refresh-wrapper">
+        <div class="ajax-refresh"
+             data-ar-action="replace-prepend"
+             data-ar-url="data.html">
+            <img src="loading.gif">
+        </div>
+    </div>
+</fieldset>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../dist/ajax-html-refresher.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ajax-refresh').AjaxRefresher({
+            processor: function (data) { // Get's called before HTML is placed, so you can edit it in this function.
+                data.find('.date').html(new Date().toISOString()); // For example, you can place the current date time in an element.
+            }
+        });
+    });
+</script>
+</body>
+</html>
