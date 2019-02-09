@@ -10,6 +10,7 @@
     "watch": "webpack --watch",
     "clean": "rm -r dist"
   },
+  "keywords": ["jquery-plugin", "ecosystem:jquery"],
   "devDependencies": {
     "clean-webpack-plugin": "^1.0.1",
     "webpack": "^4.29.3",

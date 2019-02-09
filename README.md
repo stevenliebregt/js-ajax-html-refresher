@@ -6,6 +6,12 @@ Little jQuery plugin which allows you to easily load AJAX HTML to your HTML.
 
 Depends on jQuery.
 
+## Installation
+
+Install it using NPM.
+
+`npm i ajax-html-refresher`
+
 ## Basic usage
 
 ```html
