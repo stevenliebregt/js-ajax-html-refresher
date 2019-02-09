@@ -1,7 +1,7 @@
 {
   "name": "ajax-html-refresher",
   "version": "1.0.0",
-  "description": "Little JQuery plugin which allows you to easily load AJAX HTML to your HTML.",
+  "description": "Little jQuery plugin which allows you to easily load AJAX HTML to your HTML.",
   "main": "index.js",
   "author": "Steven Liebregt <stevenliebregt@outlook.com>",
   "license": "MIT",

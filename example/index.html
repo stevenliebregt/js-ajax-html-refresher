@@ -35,8 +35,8 @@
     <div class="ajax-refresh-wrapper">
         <div class="ajax-refresh"
              data-ar-action="replace"
-             data-ar-url="data.html"
-             data-ar-interval="5000">
+             data-ar-interval="5000"
+             data-ar-url="data.html">
             <img src="loading.gif">
         </div>
     </div>
@@ -68,7 +68,8 @@
 
 <fieldset class="example-block limit-height">
     <legend><h2>Replace-Append example</h2></legend>
-    <p class="info">Replaces the content on the first pass, then appends the fetched content to the element with the <code>ajax-refresh</code> class on subsequent passes.</p>
+    <p class="info">Replaces the content on the first pass, then appends the fetched content to the element with the
+        <code>ajax-refresh</code> class on subsequent passes.</p>
     <div class="ajax-refresh-wrapper">
         <div class="ajax-refresh"
              data-ar-action="replace-append"
@@ -81,7 +82,8 @@
 
 <fieldset class="example-block limit-height">
     <legend><h2>Replace-Prepend example</h2></legend>
-    <p class="info">Replaces the content on the first pass, then prepends the fetched content to the element with the <code>ajax-refresh</code> class on subsequent passes.</p>
+    <p class="info">Replaces the content on the first pass, then prepends the fetched content to the element with the
+        <code>ajax-refresh</code> class on subsequent passes.</p>
     <div class="ajax-refresh-wrapper">
         <div class="ajax-refresh"
              data-ar-action="replace-prepend"
@@ -90,10 +92,10 @@
         </div>
     </div>
 </fieldset>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="../dist/ajax-html-refresher.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="../dist/ajax-html-refresher.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.ajax-refresh').AjaxRefresher({
             processor: function (data) { // Get's called before HTML is placed, so you can edit it in this function.
                 data.find('.date').html(new Date().toISOString()); // For example, you can place the current date time in an element.
